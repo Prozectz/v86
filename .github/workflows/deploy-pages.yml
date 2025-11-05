@@ -35,12 +35,10 @@ jobs:
           check-latest: true
 
       - name: Setup Rust toolchain
-        uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-          profile: minimal
-          target: wasm32-unknown-unknown
-          override: true
+        run: |
+          rustup toolchain install stable --profile minimal
+          rustup target add wasm32-unknown-unknown
+          rustup default stable
 
       - name: Install clang and build dependencies
         run: |
