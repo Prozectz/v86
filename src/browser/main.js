@@ -6,7 +6,8 @@ import { log_data, LOG_LEVEL, set_log_level } from "../log.js";
 import * as iso9660 from "../iso9660.js";
 
 
-const ON_LOCALHOST = !location.hostname.endsWith("copy.sh");
+// Detect if running on actual localhost (not copy.sh or GitHub Pages)
+const ON_LOCALHOST = !location.hostname.endsWith("copy.sh") && !location.hostname.endsWith("github.io");
 
 const DEFAULT_NETWORKING_PROXIES = ["wss://relay.widgetry.org/", "ws://localhost:8080/"];
 const DEFAULT_MEMORY_SIZE = 128;
