@@ -163,7 +163,7 @@ function onload() {
         query_args.get("cdn") ||
         (ON_LOCALHOST
             ? "images/"
-            : "//i.copy.sh/");
+            : "https://i.copy.sh/");
 
     // Helper function: Use CDN for chunked images (contain /), local for simple files
     const get_host = (path) =>
@@ -171,7 +171,7 @@ function onload() {
         if(location.hostname.endsWith("github.io"))
         {
             // On GitHub Pages: Use CDN for chunked/directory images, local for single files
-            return path.includes("/") ? "//i.copy.sh/" : "images/";
+            return path.includes("/") ? "https://i.copy.sh/" : "images/";
         }
         return base_host;
     };
