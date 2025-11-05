@@ -5,7 +5,7 @@ tests/jit-paging/test-jit
 *.map
 build/
 closure-compiler/
-images/
+# images/ - Now tracking images folder for GitHub Pages deployment
 *.bak
 *.orig
 *.wasm
