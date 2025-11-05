@@ -86,9 +86,8 @@ jobs:
           cp -r examples deploy/
           cp Readme.md deploy/
           cp LICENSE deploy/
-          # Create images directory (empty placeholder)
-          mkdir -p deploy/images
-          echo "Images directory for disk images - see https://github.com/copy/images" > deploy/images/README.txt
+          # Copy all disk images
+          cp -r images deploy/
 
       - name: Create .nojekyll file
         run: touch deploy/.nojekyll
