@@ -61,11 +61,13 @@ git push origin main
 ## Deployment Trigger
 
 The GitHub Pages deployment workflow (`.github/workflows/deploy-pages.yml`) is configured to:
+
 - **Trigger on:** pushes to `main` branch
 - **Build:** The full optimized version
 - **Deploy:** To GitHub Pages automatically
 
 So the flow is:
+
 1. Upstream changes → `master` branch
 2. Merge `master` → `main` branch
 3. Push `main` → triggers automatic deployment
@@ -100,6 +102,7 @@ git push origin main
 ## Current Custom Changes on `main`
 
 Files added/modified on `main` that are NOT in `master`:
+
 - `.github/workflows/deploy-pages.yml` - GitHub Pages deployment
 - `.github/workflows/ci.yml` - Updated to use `main` branch references
 - `DEPLOY.md` - Deployment documentation

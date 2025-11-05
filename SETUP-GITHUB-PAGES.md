@@ -15,6 +15,7 @@ Your code has been pushed! Now complete these steps on GitHub to activate deploy
 ## Step 2: Delete Old `master` Branch (Optional)
 
 After changing the default branch:
+
 1. Still in Settings → Branches
 2. Scroll to "Branch protection rules" (or go to main repo page)
 3. Go back to main repo page
@@ -24,6 +25,7 @@ After changing the default branch:
 7. Confirm deletion
 
 Or via command line:
+
 ```powershell
 git push origin --delete master
 ```
@@ -52,6 +54,7 @@ The workflow will run automatically when you push, but you can trigger it manual
 3. Visit: **https://prozectz.github.io/v86/**
 
 ### Terminal Examples:
+
 - Main UI: https://prozectz.github.io/v86/
 - Serial Terminal: https://prozectz.github.io/v86/examples/serial.html
 - TCP Terminal: https://prozectz.github.io/v86/examples/tcp_terminal.html
@@ -59,6 +62,7 @@ The workflow will run automatically when you push, but you can trigger it manual
 ## Troubleshooting
 
 ### If workflow fails:
+
 - Check Actions → failed workflow → click on the red ❌ → read error logs
 - Most common issue: Permissions
   - Go to Settings → Actions → General
@@ -67,11 +71,13 @@ The workflow will run automatically when you push, but you can trigger it manual
   - Click **Save**
 
 ### If site shows 404:
+
 - Make sure you selected "GitHub Actions" as source (not branch)
 - Wait 2-3 minutes after workflow completes
 - Hard refresh (Ctrl+Shift+R)
 
 ### If you want to customize:
+
 - Edit files locally
 - `git add .`
 - `git commit -m "Your changes"`
@@ -81,6 +87,7 @@ The workflow will run automatically when you push, but you can trigger it manual
 ## What Happens Automatically
 
 Every push to `main` branch will:
+
 1. ✅ Install Rust, Node.js, clang in GitHub's runner
 2. ✅ Build the optimized production version (`make all`)
 3. ✅ Package all static files
