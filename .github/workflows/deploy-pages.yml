@@ -1,0 +1,115 @@
+name: Build and Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # Allow manual trigger
+
+# Sets permissions for GitHub Pages deployment
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build v86
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          check-latest: true
+
+      - name: Setup Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          profile: minimal
+          target: wasm32-unknown-unknown
+          override: true
+
+      - name: Install clang and build dependencies
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y clang make wget
+
+      - name: Cache Closure Compiler
+        uses: actions/cache@v4
+        id: cache-closure
+        with:
+          path: closure-compiler/
+          key: closure-compiler-v20210601
+
+      - name: Download Closure Compiler
+        if: steps.cache-closure.outputs.cache-hit != 'true'
+        run: make closure-compiler/compiler.jar
+
+      - name: Cache Rust build
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            target/
+            build/wasm32-unknown-unknown/
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock', '**/Cargo.toml') }}
+          restore-keys: |
+            ${{ runner.os }}-cargo-
+
+      - name: Build optimized production version
+        run: make all
+
+      - name: Create deployment directory
+        run: |
+          mkdir -p deploy
+          # Copy necessary files for GitHub Pages
+          cp index.html deploy/
+          cp debug.html deploy/
+          cp v86.css deploy/
+          cp manifest.json deploy/
+          cp -r build deploy/
+          cp -r bios deploy/
+          cp -r examples deploy/
+          cp Readme.md deploy/
+          cp LICENSE deploy/
+          # Create images directory (empty placeholder)
+          mkdir -p deploy/images
+          echo "Images directory for disk images - see https://github.com/copy/images" > deploy/images/README.txt
+
+      - name: Create .nojekyll file
+        run: touch deploy/.nojekyll
+
+      - name: Upload artifact for GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: deploy/
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
