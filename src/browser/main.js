@@ -155,26 +155,10 @@ function onload() {
 
     const query_args = new URLSearchParams(location.search);
 
-    // Determine base host for images
-    // For GitHub Pages: Use local images/ for simple files, CDN for chunked/large files
-    // For copy.sh: Use their CDN
-    // For localhost: Use local images/ folder
-    const base_host =
-        query_args.get("cdn") ||
-        (ON_LOCALHOST
-            ? "images/"
-            : "https://i.copy.sh/");
+    const base_host = "https://i.copy.sh/";
 
-    // Helper function: Use CDN for chunked images (contain /), local for simple files
-    const get_host = (path) =>
-    {
-        if(location.hostname.endsWith("github.io"))
-        {
-            // On GitHub Pages: Use CDN for chunked/directory images, local for single files
-            return path.includes("/") ? "https://i.copy.sh/" : "images/";
-        }
-        return base_host;
-    };
+    // Helper function to always return the CDN host
+    const get_host = (path) => "https://i.copy.sh/";
 
     // For backward compatibility, set host to base_host
     const host = base_host;

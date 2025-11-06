@@ -32,30 +32,30 @@ list of emulated hardware:
 
 ## Demos
 
-[9front](https://copy.sh/v86/?profile=9front) —
-[Arch Linux](https://copy.sh/v86/?profile=archlinux) —
-[Android-x86 1.6-r2](https://copy.sh/v86?profile=android) —
-[Android-x86 4.4-r2](https://copy.sh/v86?profile=android4) —
-[BasicLinux](https://copy.sh/v86/?profile=basiclinux) —
-[Buildroot Linux](https://copy.sh/v86/?profile=buildroot) —
-[Damn Small Linux](https://copy.sh/v86/?profile=dsl) —
-[ELKS](https://copy.sh/v86/?profile=elks) —
-[FreeDOS](https://copy.sh/v86/?profile=freedos) —
-[FreeBSD](https://copy.sh/v86/?profile=freebsd) —
-[FiwixOS](https://copy.sh/v86/?profile=fiwix) —
-[Haiku](https://copy.sh/v86/?profile=haiku) —
-[SkiffOS](https://copy.sh/v86/?profile=copy/skiffos) —
-[ReactOS](https://copy.sh/v86/?profile=reactos) —
-[Windows 2000](https://copy.sh/v86/?profile=windows2000) —
-[Windows 98](https://copy.sh/v86/?profile=windows98) —
-[Windows 95](https://copy.sh/v86/?profile=windows95) —
-[Windows 1.01](https://copy.sh/v86/?profile=windows1) —
-[MS-DOS 6.22](https://copy.sh/v86/?profile=msdos) —
-[OpenBSD](https://copy.sh/v86/?profile=openbsd) —
-[Oberon](https://copy.sh/v86/?profile=oberon) —
-[KolibriOS](https://copy.sh/v86/?profile=kolibrios) —
-[SkiftOS](https://copy.sh/v86?profile=skift) —
-[QNX](https://copy.sh/v86/?profile=qnx)
+[9front](https://prozectz.github.io/v86/?profile=9front) —
+[Arch Linux](https://prozectz.github.io/v86/?profile=archlinux) —
+[Android-x86 1.6-r2](https://prozectz.github.io/v86?profile=android) —
+[Android-x86 4.4-r2](https://prozectz.github.io/v86?profile=android4) —
+[BasicLinux](https://prozectz.github.io/v86/?profile=basiclinux) —
+[Buildroot Linux](https://prozectz.github.io/v86/?profile=buildroot) —
+[Damn Small Linux](https://prozectz.github.io/v86/?profile=dsl) —
+[ELKS](https://prozectz.github.io/v86/?profile=elks) —
+[FreeDOS](https://prozectz.github.io/v86/?profile=freedos) —
+[FreeBSD](https://prozectz.github.io/v86/?profile=freebsd) —
+[FiwixOS](https://prozectz.github.io/v86/?profile=fiwix) —
+[Haiku](https://prozectz.github.io/v86/?profile=haiku) —
+[SkiffOS](https://prozectz.github.io/v86/?profile=copy/skiffos) —
+[ReactOS](https://prozectz.github.io/v86/?profile=reactos) —
+[Windows 2000](https://prozectz.github.io/v86/?profile=windows2000) —
+[Windows 98](https://prozectz.github.io/v86/?profile=windows98) —
+[Windows 95](https://prozectz.github.io/v86/?profile=windows95) —
+[Windows 1.01](https://prozectz.github.io/v86/?profile=windows1) —
+[MS-DOS 6.22](https://prozectz.github.io/v86/?profile=msdos) —
+[OpenBSD](https://prozectz.github.io/v86/?profile=openbsd) —
+[Oberon](https://prozectz.github.io/v86/?profile=oberon) —
+[KolibriOS](https://prozectz.github.io/v86/?profile=kolibrios) —
+[SkiftOS](https://prozectz.github.io/v86?profile=skift) —
+[QNX](https://prozectz.github.io/v86/?profile=qnx)
 
 ## Documentation
 
